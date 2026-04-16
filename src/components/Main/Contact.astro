@@ -1,0 +1,37 @@
+---
+interface Props {
+    name: string;
+    img: string;
+    link: string;
+    user?: string;
+}
+
+const { name, user, img, link } = Astro.props;
+---
+
+<div class="w-full sm:w-1/2 lg:w-1/3 shadow-xl rounded-xl hover:shadow-md transition-all duration-300">
+  <a
+    href={link}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="h-full border rounded-xl p-4 flex items-center gap-4 hover:shadow-md transition-all duration-300"
+  >
+    <div class="w-12 h-12 shrink-0">
+      <img
+        src={img}
+        alt={name}
+        class="w-full h-full object-contain"
+      />
+    </div>
+    <div class="flex flex-col overflow-hidden">
+      <p class="text-base sm:text-lg font-semibold leading-tight">
+        {name}
+      </p>
+      {user && (
+        <p class="text-sm sm:text-base font-light truncate">
+          {user}
+        </p>
+      )}
+    </div>
+  </a>
+</div>
