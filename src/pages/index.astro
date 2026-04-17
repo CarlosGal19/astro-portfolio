@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import MainProject from '../components/Main/Project.astro'
-import MainContact from '../components/Main/Contact.astro'
+import MainProject from "../components/Main/Project.astro";
+import MainContact from "../components/Main/Contact.astro";
 ---
 
 <Layout title="Home">
@@ -36,54 +36,88 @@ import MainContact from '../components/Main/Contact.astro'
         </div>
       </div>
     </div>
-    <div class="mt-8 px-4">
-      <div
-        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-6 p-4"
-      >
-        <div class="w-full md:w-1/2">
-          <img
-            src="/img/coding.jpg"
-            alt=""
-            class="w-full h-auto rounded-lg object-cover"
-          />
-        </div>
-        <div class="w-full md:w-1/2 flex flex-col justify-center">
-          <p class="text-center text-2xl md:text-3xl lg:text-4xl mt-4 md:mt-0">
-            About me
-          </p>
-          <p
-            class="font-medium text-center mt-6 text-base md:text-lg leading-relaxed"
-          >
-            Software Engineer with proven experience delivering high-impact
-            solutions across the manufacturing, healthcare, aerospace, and
-            government sectors. Skilled in architecting, developing, testing,
-            and deploying robust systems that meet demanding standards for
-            quality, performance, scalability, and security.
-          </p>
+    <div class="mt-16 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row items-center gap-8 p-6 shadow-xl rounded-xl"
+        >
+          <div class="w-full md:w-1/2">
+            <img
+              src="/img/coding.jpg"
+              alt=""
+              class="w-full h-full max-h-100 rounded-xl object-cover"
+            />
+          </div>
+
+          <div class="w-full md:w-1/2 flex flex-col justify-center">
+            <p
+              class="text-center text-2xl md:text-3xl lg:text-4xl mt-4 md:mt-0"
+            >
+              About me
+            </p>
+            <p
+              class="font-medium text-center mt-6 text-base md:text-lg leading-relaxed"
+            >
+              Software Engineer with proven experience delivering high-impact
+              solutions across the manufacturing, healthcare, aerospace, and
+              government sectors. Skilled in architecting, developing, testing,
+              and deploying robust systems that meet demanding standards for
+              quality, performance, scalability, and security.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-	<div class="mt-8">
-		<div class="mx-20">
-			<h3 class="text-4xl">Projects</h3>
-			<p class="font-normal">Some of the most important projects I have collaborated:</p>
-			<div class="flex space-x-2">
-				<MainProject name="Balluff Maintenance System" description="Design, development, testing and implementation of a system for recording, tracking and validate machine maintenance of the production floor machines in Balluff Manufacturing Aguascalientes." img="/img/balluff.webp" />
-				<MainProject name="CFE Workers Overtime" description="Development of a system to manage and validate overtime hours for CFE personnel across multiple regions including Aguascalientes, Irapuato, Fresnillo and León." img="/img/cfe.webp"/>
-				<MainProject name="Astro Eye" description="Development of an interactive platform for analyzing large-scale, cloud-hosted NASA imagery, enabling efficient exploration and visualization of high-resolution datasets as part of the NASA Space Apps Challenge 2025." img="/img/nasa.webp" />
-			</div>
-		</div>
-	</div>
-	<div class="mt-8">
-		<div class="mx-20">
-			<h3 class="text-3xl">Contact</h3>
-			<p class="font-normal">You can find out more about me at:</p>
-			<div class="flex space-x-2">
-				<MainContact name="Github" user="CarlosGal19" img="/icons/github.svg" link="https://github.com/CarlosGal19"/>
-				<MainContact name="LinkedIn" user="Carlos Alejandro Galindo Islas" img="/icons/linkedin.svg" link="https://www.linkedin.com/in/carlosgalindoislas/"/>
-				<MainContact name="Email" user="c.galindo.islas@gmail.com" img="/icons/email.svg" link="mailto:c.galindo.islas@gmail.com"/>
-			</div>
-		</div>
-	</div>
+    <div class="mt-8">
+      <div class="mx-20">
+        <h3 class="text-4xl">Projects</h3>
+        <p class="font-normal">
+          Some of the most important projects I have collaborated:
+        </p>
+        <div class="flex space-x-2">
+          <MainProject
+            name="Balluff Maintenance System"
+            description="Design, development, testing and implementation of a system for recording, tracking and validate machine maintenance of the production floor machines in Balluff Manufacturing Aguascalientes."
+            img="/img/balluff.webp"
+          />
+          <MainProject
+            name="CFE Workers Overtime"
+            description="Development of a system to manage and validate overtime hours for CFE personnel across multiple regions including Aguascalientes, Irapuato, Fresnillo and León."
+            img="/img/cfe.webp"
+          />
+          <MainProject
+            name="Astro Eye"
+            description="Development of an interactive platform for analyzing large-scale, cloud-hosted NASA imagery, enabling efficient exploration and visualization of high-resolution datasets as part of the NASA Space Apps Challenge 2025."
+            img="/img/nasa.webp"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="mt-8">
+      <div class="mx-20">
+        <h3 class="text-3xl">Contact</h3>
+        <p class="font-normal">You can find out more about me at:</p>
+        <div class="flex space-x-2">
+          <MainContact
+            name="Github"
+            user="CarlosGal19"
+            img="/icons/github.svg"
+            link="https://github.com/CarlosGal19"
+          />
+          <MainContact
+            name="LinkedIn"
+            user="Carlos Alejandro Galindo Islas"
+            img="/icons/linkedin.svg"
+            link="https://www.linkedin.com/in/carlosgalindoislas/"
+          />
+          <MainContact
+            name="Email"
+            user="c.galindo.islas@gmail.com"
+            img="/icons/email.svg"
+            link="mailto:c.galindo.islas@gmail.com"
+          />
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
