@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Job from '../components/Experience/Job.astro'
+import Study from "../components/Experience/Study.astro";
+---
+
+<Layout title="Experience">
+    <main class="flex flex-col gap-20 py-16">
+        <section class="max-w-3xl mx-auto text-center flex flex-col gap-4 px-4">
+            <h1 class="text-6xl font-bold">Experience</h1>
+            <p class="text-lg font-light leading-relaxed">
+                A timeline of my professional and academic journey, focused on building
+                scalable systems and continuously improving my technical skills.
+            </p>
+        </section>
+        <section class="max-w-5xl mx-auto w-full flex flex-col gap-10 px-4">
+            <div class="flex items-center justify-between">
+                <h2 class="text-4xl font-semibold">Work experience</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <Job
+                    name="CFE"
+                    img="/img/cfe.webp"
+                    date="Aug 2024 - Dec 2024"
+                    description="Developed a system to validate overtime hours based on user roles, implementing a hierarchical approval process."
+                />
+                <Job
+                    name="Balluff"
+                    img="/img/balluff.webp"
+                    date="May 2025 - Present"
+                    description="Currently contributing to industrial solutions, focusing on scalable and efficient software systems."
+                />
+            </div>
+        </section>
+        <div class="max-w-5xl mx-auto w-full px-4">
+            <div class="border-t"></div>
+        </div>
+        <section class="max-w-3xl mx-auto text-center flex flex-col gap-4 px-4">
+            <h2 class="text-3xl font-semibold">What I focus on</h2>
+            <p class="text-sm font-light leading-relaxed">
+                I enjoy working on backend systems, API design,  database design and scalable architectures.
+                I also have experience building modern web interfaces and mobile applications.
+                My goal is to create efficient, maintainable, and user-focused solutions.
+            </p>
+        </section>
+        <div class="max-w-5xl mx-auto w-full px-4">
+            <div class="border-t"></div>
+        </div>
+        <section class="max-w-5xl mx-auto w-full flex flex-col gap-10 px-4">
+            <div class="flex items-center justify-between">
+                <h2 class="text-4xl font-semibold">Studies</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <Study
+                    name="UTMA"
+                    img="/img/utma.png"
+                    period="Aug 2024 - Dec 2024"
+                    grade="Engineering in Information Technology and Digital Innovation"
+                />
+                <Study
+                    name="UZH"
+                    img="/img/uzh.webp"
+                    period="May 2025 - Present"
+                    grade="Deep Dive into Blockchain – 2025 Summer School Course"
+                />
+            </div>
+        </section>
+    </main>
+</Layout>
+```
