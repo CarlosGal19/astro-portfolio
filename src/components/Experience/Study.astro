@@ -11,7 +11,7 @@ interface Props {
 const { name, img, period, grade } = Astro.props;
 ---
 
-<div class="rounded-xl shadow-xl overflow-hidden p-6 flex flex-col gap-4">
+<div class="shadow-xl rounded-xl hover:shadow-md transition-all duration-300 hover:cursor-pointer overflow-hidden p-6 flex flex-col gap-4">
     <div class="w-full h-40 flex items-center justify-center overflow-hidden rounded-lg">
         <Image
             src={img}
