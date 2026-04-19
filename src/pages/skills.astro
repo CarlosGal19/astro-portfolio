@@ -1,0 +1,54 @@
+---
+import Certification from "../components/Skills/Certification.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Skills">
+  <main class="flex flex-col gap-20 py-16">
+
+    <!-- HEADER -->
+    <section class="max-w-3xl mx-auto text-center flex flex-col gap-4 px-4">
+      <h1 class="text-6xl font-bold">Skills</h1>
+      <p class="text-lg font-light leading-relaxed">
+        A collection of technologies, tools, and concepts I have worked with
+        across different projects and professional experiences.
+      </p>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="max-w-5xl mx-auto w-full flex flex-col gap-10 px-4">
+
+      <div class="flex items-center justify-between">
+        <h2 class="text-4xl font-semibold">Tech stack</h2>
+        <span class="text-sm font-light">Core tools</span>
+      </div>
+
+      <!-- SKILLS IMAGE -->
+      <div class="w-full flex justify-center p-6 rounded-xl shadow-xl">
+        <img
+          src="https://skillicons.dev/icons?i=angular,nest,dotnet,py,java,postgres,docker,git,linux,debian&perline=12"
+          alt="IT Skills"
+          class="w-full max-w-4xl object-contain"
+        />
+      </div>
+
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="max-w-5xl mx-auto w-full px-4">
+      <div class="border-t"></div>
+    </div>
+
+    <!-- CERTIFICATIONS / LEARNING -->
+    <section class="max-w-5xl mx-auto text-center flex flex-col gap-4 px-4">
+      <h2 class="text-3xl font-semibold">Learning & Certifications</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <Certification name="Scrum Fundamentals Certified" provider="CertiProf" img="/certifications/scrum.jpg" />
+        <Certification name="Deep Dive into Blockchain" provider="University of Zürich (UZH)" img="/certifications/uzh_certificate.png" />
+        <Certification name="ITEP" provider="International Test of English Proficiency" img="/certifications/itep.jpg" />
+        <Certification name="Aprendiendo Python Nivel Intermedio" provider="IA Center" img="/certifications/python.jpg" />
+      </div>
+    </section>
+
+  </main>
+</Layout>

@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+interface Props {
+    name: string;
+    provider: string;
+    img: string;
+}
+
+const { name, provider, img } = Astro.props;
+---
+<div class="group rounded-xl shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl cursor-pointer">
+
+    <!-- IMAGE -->
+    <div class="w-full h-44 flex items-center justify-center overflow-hidden">
+        <Image
+            src={img}
+            alt={`${name} - ${provider}`}
+            width={300}
+            height={180}
+            class="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105"
+        />
+    </div>
+
+    <!-- CONTENT -->
+    <div class="p-4 flex flex-col gap-1">
+        <h3 class="text-sm font-semibold leading-tight">
+            {name}
+        </h3>
+        <p class="text-xs font-light">
+            {provider}
+        </p>
+    </div>
+
+</div>
