@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import MainProject from "../components/Main/Project.astro";
 import MainContact from "../components/Main/Contact.astro";
+import Image from "astro/components/Image.astro";
 ---
 
 <Layout title="Home">
@@ -28,8 +29,11 @@ import MainContact from "../components/Main/Contact.astro";
           </p>
         </div>
         <div class="w-full md:w-1/2 flex justify-center">
-          <img
+          <Image
+            loading='eager'
             src="/img/me-main.jpeg"
+            width={160}
+            height={160}
             alt="Me at UZH"
             class="w-40 sm:w-56 md:w-72 lg:w-80 xl:w-96 aspect-square rounded-full object-cover shadow-lg"
           />
@@ -42,9 +46,11 @@ import MainContact from "../components/Main/Contact.astro";
           class="flex flex-col md:flex-row items-center gap-8 p-6 shadow-xl rounded-xl"
         >
           <div class="w-full md:w-1/2">
-            <img
+            <Image
               src="/img/coding.jpg"
-              alt=""
+              alt="coding"
+              width={100}
+              height={100}
               class="w-full h-full max-h-100 rounded-xl object-cover"
             />
           </div>
