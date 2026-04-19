@@ -1,0 +1,40 @@
+---
+import Image from 'astro/components/Image.astro';
+
+interface Props {
+  name: string;
+  languages?: string[];
+  sm_description: string;
+  lg_description?: string;
+  img: string;
+  github_link?: string;
+}
+
+const { name, img, sm_description, languages, lg_description, github_link } = Astro.props;
+---
+
+<div
+  class="shadow-xl rounded-xl hover:cursor-pointer hover:shadow-md transition-all duration-300"
+>
+  <div class="h-full p-5 flex flex-col gap-4">
+    <div class="w-full aspect-video overflow-hidden rounded-lg">
+      <Image
+        loading="eager"
+        width={120}
+        height={120}
+        src={img}
+        alt={name}
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div class="flex flex-col gap-2 grow">
+      <p class="text-lg sm:text-xl font-semibold leading-tight">
+        {name}
+      </p>
+
+      <p class="text-sm sm:text-base font-light leading-relaxed">
+        {sm_description}
+      </p>
+    </div>
+  </div>
+</div>

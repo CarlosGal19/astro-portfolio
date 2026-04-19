@@ -1,7 +1,62 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Project from "../components/Projects/Project.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Projects">
+  <main class="flex flex-col gap-20 py-16">
 
+    <!-- HEADER -->
+    <section class="max-w-3xl mx-auto text-center flex flex-col gap-4 px-4">
+      <h1 class="text-6xl font-bold">Projects</h1>
+      <p class="text-lg font-light leading-relaxed">
+        A selection of projects focused on real-world problem solving, system design,
+        and scalable applications across different industries.
+      </p>
+    </section>
+
+    <!-- PROJECTS GRID -->
+    <section class="max-w-5xl mx-auto w-full flex flex-col gap-10 px-4">
+
+      <div class="flex items-center justify-between">
+        <h2 class="text-4xl font-semibold">All projects</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <Project
+          name="CFE Workers Overtime"
+          sm_description="Development of a system to manage and validate overtime hours for CFE personnel across multiple regions."
+          img="/img/cfe.webp"
+        />
+
+        <Project
+          name="Balluff Maintenance System"
+          sm_description="System for recording, tracking and validating machine maintenance in production environments."
+          img="/img/balluff.webp"
+        />
+
+        <Project
+          name="Balluff Warehouse Orders Management System"
+          sm_description="Application for tracking materials from warehouse to production with order control and precision weighing."
+          img="/img/balluff.webp"
+        />
+
+        <Project
+          name="Astro Eye"
+          sm_description="Platform for exploring and analyzing large-scale NASA imagery datasets."
+          img="/img/nasa.webp"
+        />
+
+        <Project
+          name="Yo Voy Ags App"
+          sm_description="Application for recharging public transport cards, tracking routes in real time, and providing live user feedback."
+          img="/img/yo_voy.jpg"
+        />
+
+      </div>
+
+    </section>
+
+  </main>
 </Layout>
