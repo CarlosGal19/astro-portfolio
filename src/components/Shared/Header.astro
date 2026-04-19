@@ -1,31 +1,82 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
 <header class="flex justify-evenly w-full p-6">
-    <div class="w-1/8">
-        <p class="text-center text-6xl hover:cursor-pointer font-bold">
-            <a href="/">CG</a>
-        </p>
-        <!-- <img src="" alt="" srcset=""> -->
-    </div>
-    <nav class="w-1/2 m-auto">
-        <ul class="flex justify-evenly font-semibold text-xl">
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/experience">Experience</a>
-            </li>
-            <li>
-                <a href="/projects">Projects</a>
-            </li>
-            <li>
-                <a href="/skills">Skills</a>
-            </li>
-            <!-- <li>
-                <a href="/zurich">Zurich</a>
-            </li> -->
-        </ul>
-    </nav>
-    <div class="w-1/8 my-auto">
-        <!-- <p class="text-center text-2xl hover:cursor-pointer font-semibold">Lang</p> -->
-        <!-- <img src="" alt=""> -->
-    </div>
+  <div class="w-1/8">
+    <p class="text-center text-6xl font-bold">
+      <a href="/" class="hover:opacity-80 transition">CG</a>
+    </p>
+  </div>
+
+  <nav class="w-1/2 m-auto">
+    <ul class="flex justify-evenly font-semibold text-xl">
+      <li>
+        <a href="/" class={`nav-link ${currentPath === "/" ? "active" : ""}`}
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/experience"
+          class={`nav-link ${currentPath === "/experience" ? "active" : ""}`}
+          >Experience</a
+        >
+      </li>
+      <li>
+        <a
+          href="/projects"
+          class={`nav-link ${currentPath === "/projects" ? "active" : ""}`}
+          >Projects</a
+        >
+      </li>
+      <li>
+        <a
+          href="/skills"
+          class={`nav-link ${currentPath === "/skills" ? "active" : ""}`}
+          >Skills</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <div class="w-1/8 my-auto"></div>
 </header>
+
+<style>
+  .nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.25s ease;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #03045e;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  /* Hover */
+  .nav-link:hover {
+    color: #023E8A;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Active */
+  .nav-link.active {
+    color: #03045e;
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+  }
+</style>
