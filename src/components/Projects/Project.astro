@@ -11,10 +11,14 @@ interface Props {
 }
 
 const { name, img, sm_description, languages, lg_description, github_link } = Astro.props;
+
+const modalId = `modal-${name.replace(/\s+/g, '-').toLowerCase()}`;
 ---
 
+<!-- CARD -->
 <div
   class="shadow-xl rounded-xl hover:cursor-pointer hover:shadow-md transition-all duration-300"
+  onclick={`document.getElementById('${modalId}').classList.remove('hidden')`}
 >
   <div class="h-full p-5 flex flex-col gap-4">
     <div class="w-full aspect-video overflow-hidden rounded-lg">
@@ -27,6 +31,7 @@ const { name, img, sm_description, languages, lg_description, github_link } = As
         class="w-full h-full object-cover"
       />
     </div>
+
     <div class="flex flex-col gap-2 grow">
       <p class="text-lg sm:text-xl font-semibold leading-tight">
         {name}
@@ -36,5 +41,31 @@ const { name, img, sm_description, languages, lg_description, github_link } = As
         {sm_description}
       </p>
     </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div
+  id={modalId}
+  class="hidden fixed inset-0 bg-black/60 flex items-center justify-center"
+>
+  <div class="bg-white p-5 rounded-lg w-[90%] max-w-md relative">
+    <button
+      class="absolute top-2 right-3 hover:cursor-pointer"
+      onclick={`document.getElementById('${modalId}').classList.add('hidden')`}
+    >
+      ✕
+    </button>
+
+    <Image src={img} alt={name} width={400} height={250} class="rounded-md mb-3" />
+
+    <p class="font-bold">{name}</p>
+    <p class="text-sm mt-2 font-light">{lg_description ?? sm_description}</p>
+
+    {github_link && (
+      <a href={github_link} target="_blank" class="text-blue-500 text-sm">
+        GitHub
+      </a>
+    )}
   </div>
 </div>
