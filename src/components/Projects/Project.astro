@@ -49,7 +49,7 @@ const modalId = `modal-${name.replace(/\s+/g, '-').toLowerCase()}`;
   id={modalId}
   class="hidden fixed inset-0 bg-black/60 flex items-center justify-center"
 >
-  <div class="bg-white p-5 rounded-lg w-[90%] max-w-md relative">
+  <div class="bg-white p-4 rounded-lg w-[90%] max-w-md relative">
     <button
       class="absolute top-2 right-3 hover:cursor-pointer"
       onclick={`document.getElementById('${modalId}').classList.add('hidden')`}
@@ -57,13 +57,13 @@ const modalId = `modal-${name.replace(/\s+/g, '-').toLowerCase()}`;
       ✕
     </button>
 
-    <Image src={img} alt={name} width={400} height={250} class="rounded-md mb-3" />
+    <Image src={img} alt={name} width={400} height={200} class="rounded-md mb-2" />
 
     <p class="font-bold">{name}</p>
-    <p class="text-sm mt-2 font-light">{lg_description ?? sm_description}</p>
+    <p class="text-sm mt-1 font-light">{lg_description ?? sm_description}</p>
 
     {github_link && (
-      <a href={github_link} target="_blank" class="text-blue-500 text-sm">
+      <a href={github_link} target="_blank" class="text-blue-500 text-sm inline-block mt-2">
         GitHub
       </a>
     )}
